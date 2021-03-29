@@ -1,0 +1,27 @@
+server:
+  port: 10886
+spring:
+  application:
+    name: wudi
+  datasource:
+    password: root
+    username: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+#指定eureka服务地址
+eureka:
+  client:
+    service-url:
+      # EurekaServer的地址
+      defaultZone: http://localhost:7001/eureka
+      #每隔40s进行一次备份
+    registry-fetch-interval-seconds: 40
+  instance:
+    #自定义注册ip地址
+    ip-address: 192.168.50.1
+    #是否推荐使用此ip地址进行注册
+    prefer-ip-address: true
+    #续期失效时间
+    lease-expiration-duration-in-seconds: 120
+      #续期间隔时间
+    lease-renewal-interval-in-seconds: 20
